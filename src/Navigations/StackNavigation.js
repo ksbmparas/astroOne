@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../Screens/Home';
 import Login from '../Screens/Auth/Login';
 import Otp from '../Screens/Auth/Otp';
+import Home1 from '../Screens/Home/Home1';
+import Homeheader from '../Screens/Home/Homeheader';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
     return (
@@ -12,6 +14,8 @@ const StackNavigation = () => {
             <Stack.Screen name="Otp" component={Otp} />
 
             <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Home1" component={Home1} />
+            <Stack.Screen name="Homeheader" component={Homeheader} />
 
 
 
