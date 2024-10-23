@@ -13,11 +13,12 @@ export const Sizes = {
     fixHorizontalPadding: SCREEN_WIDTH * 0.02
 }
 export const Colors = {
-    primaryTheme: '#EA7515',
+    primaryTheme: '#bf4f1b',
     secondryTheme: '#FBBC04',
     secondryLight: '#aad576',
     white: '#fff',
     black: '#000',
+    lightBlack:'#8B8B8B',
     grayA: '#6c757d',
     grayB: '#adb5bd',
     grayC: '#E2DEDE',
@@ -48,8 +49,6 @@ export const Fonts = {
         color: Colors.white,
         fontFamily: 'Montserrat-Bold',
     }
-
-
 
 
 
