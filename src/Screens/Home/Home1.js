@@ -5,8 +5,9 @@ import { SCREEN_WIDTH } from '../../config/Screen'
 import { SCREEN_HEIGHT } from '../../config/Style'
 import { ScrollView } from 'react-native-gesture-handler'
 import { TouchableOpacity } from 'react-native'
-
+import { useNavigation } from '@react-navigation/native'
 const Home1 = () => {
+    const navigation = useNavigation();
     return (
         <View style={{ flex: 1, }}>
             <Homeheader />
@@ -84,11 +85,13 @@ const Home1 = () => {
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
 
                 <View >
-                    <View style={{  height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4,  }}>
+                    <TouchableOpacity 
+                     onPress={() => navigation.navigate('Home')}
+                    style={{  height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                         <Image
                             style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
                             source={require('../../assets/images/worship1.png')} />
-                    </View>
+                    </TouchableOpacity>
                     </View>
                     <View style={{  height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                         <Image
