@@ -6,6 +6,7 @@ import Login from '../Screens/Auth/Login';
 import Otp from '../Screens/Auth/Otp';
 import Home1 from '../Screens/Home/Home1';
 import Homeheader from '../Screens/Home/Homeheader';
+import Splash from '../Screens/Splash';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
     return (
@@ -15,6 +16,7 @@ const StackNavigation = () => {
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Home1" component={Home1} />
             <Stack.Screen name="Homeheader" component={Homeheader} />
+            <Stack.Screen name="Splash" component={Splash}/>
 
 
 
