@@ -4,11 +4,13 @@ import Homeheader from './Homeheader'
 import { SCREEN_WIDTH } from '../../config/Screen'
 import { SCREEN_HEIGHT } from '../../config/Style'
 import { ScrollView } from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native'
 
 const Home1 = () => {
     return (
-        <ScrollView style={{ flex: 1, }}>
+        <View style={{ flex: 1, }}>
             <Homeheader />
+            <ScrollView style={{paddingHorizontal:SCREEN_WIDTH*0.02}}>
             {ASTROONENOTE()}
             {CARD1()}
             {banner()}
@@ -17,40 +19,42 @@ const Home1 = () => {
             {banner3()}
             {BANNER4()}
             {banner5()}
-
-        </ScrollView>
+            {banner6()}
+            {visittemple()}
+            </ScrollView>
+        </View>
     )
     function ASTROONENOTE() {
         return (
-            <View style={{ paddingHorizontal: SCREEN_WIDTH * 0.02, paddingVertical: SCREEN_HEIGHT * 0.01 }}>
+            <View style={{  paddingVertical: SCREEN_HEIGHT * 0.01 }}>
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>Auspicious and Inauspicious time</Text>
             </View>)
     }
     function CARD1() {
         return (
 
-            <View style={{ paddingHorizontal: SCREEN_WIDTH * 0.03 }}>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: SCREEN_WIDTH * 0.05, paddingVertical: SCREEN_HEIGHT * 0.03, borderRadius: 10, backgroundColor: "white", borderColor: "gray", elevation: 1 }}>
+            <View style={{ }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: SCREEN_WIDTH * 0.03, paddingVertical: SCREEN_HEIGHT * 0.03, borderRadius: 10, backgroundColor: "white", borderColor: "gray", elevation: 1 }}>
                     <View style={{ gap: 10 }}>
-                        <View style={{ width: SCREEN_WIDTH * 0.4, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.01, backgroundColor: "#40956E", elevation: 1 }}>
+                        <TouchableOpacity style={{ width: SCREEN_WIDTH * 0.43, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.013, backgroundColor: "#40956E", elevation: 1 }}>
                             <Text style={{ color: "white", fontSize: 12 }}>Abhijeet Mahurata</Text>
                             <Text style={{ color: "white", fontSize: 12 }}>Coming Soon</Text>
-                        </View>
-                        <View style={{ width: SCREEN_WIDTH * 0.4, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.01, backgroundColor: "#FCCDC7", elevation: 1 }}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ width: SCREEN_WIDTH * 0.43, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.013, backgroundColor: "#FCCDC7", elevation: 1 }}>
                             <Text style={{ color: "white", fontSize: 12 }}>Rahukaal</Text>
                             <Text style={{ color: "white", fontSize: 12 }}>11.00-11.45</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={{ gap: 10 }}>
-                        <View style={{ width: SCREEN_WIDTH * 0.4, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.01, backgroundColor: "#685F02", elevation: 1 }}>
+                        <TouchableOpacity style={{ width: SCREEN_WIDTH * 0.43, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.013, backgroundColor: "#685F02", elevation: 1 }}>
                             <Text style={{ color: "white", fontSize: 12 }}>Gulik period</Text>
                             <Text style={{ color: "white", fontSize: 12 }}>11.00-11.45</Text>
-                        </View>
-                        <View style={{ width: SCREEN_WIDTH * 0.4, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.01, backgroundColor: "#6D88D5", elevation: 1 }}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ width: SCREEN_WIDTH * 0.43, alignItems: "center", justifyContent: "center", borderRadius: 10, paddingVertical: SCREEN_HEIGHT * 0.013, backgroundColor: "#6D88D5", elevation: 1 }}>
                             <Text style={{ color: "white", fontSize: 12 }}>Rahukaal</Text>
                             <Text style={{ color: "white", fontSize: 12 }}>11.00-11.45</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
 
                 </View>
@@ -59,24 +63,24 @@ const Home1 = () => {
     function banner() {
         return (
             <View style={{ paddingVertical: SCREEN_HEIGHT * 0.02 }}>
-                <View style={{ alignItems: "center" }}>
+                <TouchableOpacity style={{ alignItems: "center" }}>
                     <Image
                         style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
                         source={require('../../assets/images/banner.png')} />
-                </View>
+                </TouchableOpacity>
 
             </View>
         )
     }
     function placeofworship() {
         return (
-            <View style={{paddingHorizontal:SCREEN_WIDTH*0.02}}>
+            <View style={{}}>
 
                 <View style={{paddingVertical:SCREEN_HEIGHT*0.01}}>
                     <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>Place of Worship</Text>
                 </View>
 
-            <View style={{paddingHorizontal:SCREEN_WIDTH*0.04,paddingTop:SCREEN_HEIGHT*0.02 ,gap:10}}>
+            <View style={{paddingHorizontal:SCREEN_WIDTH*0.03,paddingVertical:SCREEN_HEIGHT*0.02 ,gap:10,borderRadius:10,backgroundColor:"white"}}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
 
                 <View >
@@ -121,11 +125,11 @@ const Home1 = () => {
                 <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
                     <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>Complete Horoscope Solution</Text>
                 </View>
-            <View style={{ alignItems: "center" }}>
+            <TouchableOpacity style={{ alignItems: "center" }}>
                 <Image
                     style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
                     source={require('../../assets/images/BANNER2.png')} />
-            </View>
+            </TouchableOpacity>
 
         </View>
         )
@@ -136,11 +140,11 @@ const Home1 = () => {
             <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}> Horoscope Matching</Text>
             </View>
-        <View style={{ alignItems: "center" }}>
+        <TouchableOpacity style={{ alignItems: "center" }}>
             <Image
                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
                 source={require('../../assets/images/banner3.png')} />
-        </View>
+        </TouchableOpacity>
 
     </View>
         )
@@ -151,11 +155,11 @@ const Home1 = () => {
             <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>Your Horoscope </Text>
             </View>
-        <View style={{ alignItems: "center" }}>
+        <TouchableOpacity style={{ alignItems: "center" }}>
             <Image
                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
                 source={require('../../assets/images/BANNER4.png')} />
-        </View>
+        </TouchableOpacity>
 
     </View>
         )
@@ -166,13 +170,65 @@ const Home1 = () => {
             <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>Religion Collection</Text>
             </View>
-        <View style={{ alignItems: "center" }}>
+        <TouchableOpacity style={{ alignItems: "center" }}>
             <Image
                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
                 source={require('../../assets/images/banner5.png')} />
-        </View>
+        </TouchableOpacity>
 
     </View>
+        )
+    }
+    function banner6(){
+        return(
+            <View style={{ }}>
+            <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
+                <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>AstroOne Special Devotee Rosery</Text>
+            </View>
+        <TouchableOpacity style={{ alignItems: "center" }}>
+            <Image
+                style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
+                source={require('../../assets/images/banner7.png')} />
+        </TouchableOpacity>
+
+    </View>
+        )
+    }
+    function visittemple(){
+        return(
+            <View>
+                <View style={{paddingVertical:SCREEN_HEIGHT*0.02}}>
+                    <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>Virtue of visiting famous temples</Text>
+                </View>
+                <ScrollView 
+             horizontal={true}
+                style={{flexDirection:"row" ,}}>
+
+                    <View style={{flexDirection:"row",gap:10}}>
+                    <TouchableOpacity style={{borderWidth:1,height:SCREEN_HEIGHT*0.3,width:SCREEN_WIDTH*0.39,alignItems:"center",borderRadius:10,backgroundColor:"white",borderColor:"gray",elevation:3}}>
+                        <Image 
+                        style={{height:SCREEN_HEIGHT*0.25,width:SCREEN_WIDTH*0.38,borderRadius:10,resizeMode:"contain"}}
+                        source={require('../../assets/images/live.png')}/>
+                        <Text  style={{ color: "black", fontSize: 13,  }}>उज्जैन से सीधा प्रसारण</Text>
+                        <Text  style={{ color: "gray", fontSize: 13,  }}>घर बैठे दिव्यदर्शन</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{borderWidth:1,height:SCREEN_HEIGHT*0.3,width:SCREEN_WIDTH*0.39,alignItems:"center",borderRadius:10,backgroundColor:"white",borderColor:"gray",elevation:3}}>
+                        <Image 
+                        style={{height:SCREEN_HEIGHT*0.25,width:SCREEN_WIDTH*0.38,borderRadius:10,resizeMode:"contain"}}
+                        source={require('../../assets/images/live.png')}/>
+                        <Text  style={{ color: "black", fontSize: 13,  }}>उज्जैन से सीधा प्रसारण</Text>
+                        <Text  style={{ color: "gray", fontSize: 13,  }}>घर बैठे दिव्यदर्शन</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{borderWidth:1,height:SCREEN_HEIGHT*0.3,width:SCREEN_WIDTH*0.39,alignItems:"center",borderRadius:10,backgroundColor:"white",borderColor:"gray",elevation:3}}>
+                        <Image 
+                        style={{height:SCREEN_HEIGHT*0.25,width:SCREEN_WIDTH*0.38,borderRadius:10,resizeMode:"contain"}}
+                        source={require('../../assets/images/live.png')}/>
+                        <Text  style={{ color: "black", fontSize: 13,  }}>उज्जैन से सीधा प्रसारण</Text>
+                        <Text  style={{ color: "gray", fontSize: 13,  }}>घर बैठे दिव्यदर्शन</Text>
+                    </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </View>
         )
     }
 }

@@ -13,7 +13,7 @@ const Homeheader = () => {
     function myheader() {
         return (
             <View style={{flexDirection:"row" ,justifyContent:"space-between",paddingVertical:SCREEN_HEIGHT*0.015,backgroundColor:"white",paddingHorizontal:SCREEN_WIDTH*0.015}}>
-                <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
 
                     <TouchableOpacity>
                         <FontAwesome
