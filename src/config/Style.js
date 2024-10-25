@@ -29,7 +29,8 @@ export const Colors = {
     grayDark: '#4A4A4A',
     redA: '#e76f51',
     wine: '#610F06',
-    orange: '#FC4702'
+    orange: '#FC4702',
+    background_theme1:"#D56A14"
 
 }
 

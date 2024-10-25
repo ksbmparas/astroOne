@@ -1,10 +1,14 @@
-import { StyleSheet, Text, View ,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View ,TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Ionicons  from 'react-native-vector-icons/Ionicons'
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../config/Style'
-const Homeheader = () => {
+import { useNavigation } from '@react-navigation/native'
+
+
+const Homeheader = ({}) => {
+    const navigation = useNavigation();
     return (
         <View>
             {myheader()}
@@ -15,7 +19,9 @@ const Homeheader = () => {
             <View style={{flexDirection:"row" ,justifyContent:"space-between",paddingVertical:SCREEN_HEIGHT*0.015,backgroundColor:"white",paddingHorizontal:SCREEN_WIDTH*0.015}}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{
+                      navigation.openDrawer()
+                    }}>
                         <FontAwesome
                             name='bars'
                             size={25}

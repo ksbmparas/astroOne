@@ -5,18 +5,22 @@ import Home from '../Screens/Home';
 import Login from '../Screens/Auth/Login';
 import Otp from '../Screens/Auth/Otp';
 import Home1 from '../Screens/Home/Home1';
-import Homeheader from '../Screens/Home/Homeheader';
+import Homeheader from '../Screens/Home/HomeHeader';
 import Splash from '../Screens/Splash';
+import bottomtabnavigator from './bottomtabnavigator';
+import Drawernavigator from './Drawernavigator';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }} initialRouteName='Splash'>
-            <Stack.Screen name="Login" component={Login} />
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Login" component={Login}/>
             <Stack.Screen name="Otp" component={Otp} />
             <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Home1" component={Home1} />
-            <Stack.Screen name="Homeheader" component={Homeheader} />
-            <Stack.Screen name="Splash" component={Splash}/>
+            {/* <Stack.Screen name="Home1" component={Home1} /> */}
+            <Stack.Screen name="home1" component={bottomtabnavigator}/>
+            
+            {/* <Stack.Screen name="Homeheader" component={Homeheader} />
+            <Stack.Screen name="Splash" component={Splash}/> */}
 
 
 
