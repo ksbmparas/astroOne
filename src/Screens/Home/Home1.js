@@ -12,6 +12,7 @@ const Home1 = () => {
         <View style={{ flex: 1, }}>
             <Homeheader />
             <ScrollView style={{ paddingHorizontal: SCREEN_WIDTH * 0.02 }}>
+                {AstroBlog()}
                 {ASTROONENOTE()}
                 {CARD1()}
                 {banner()}
@@ -30,6 +31,18 @@ const Home1 = () => {
             <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>Auspicious and Inauspicious time</Text>
             </View>)
+    }
+
+    function AstroBlog() {
+        return (
+            <View>
+                <TouchableOpacity
+                    onPress={()=>navigation.navigate('AstroBlog')}
+                    style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
+                    <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>AstroBlogs</Text>
+                </TouchableOpacity>
+            </View>
+        )
     }
     function CARD1() {
         return (
@@ -95,7 +108,7 @@ const Home1 = () => {
                         </View>
                         <View>
                             <TouchableOpacity
-                                onPress={()=>navigation.navigate('Navgrah')}
+                                onPress={() => navigation.navigate('Navgrah')}
                                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                                 <Image
                                     style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
@@ -108,16 +121,16 @@ const Home1 = () => {
 
                     <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
 
-                        <TouchableOpacity 
-                            onPress={()=>navigation.navigate('VardaniBargad')}
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('VardaniBargad')}
                             style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                             <Image
                                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
                                 source={require('../../assets/images/worship3.png')} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity 
-                            onPress={()=>navigation.navigate('Shivalya')}
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('Shivalya')}
                             style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                             <Image
                                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}

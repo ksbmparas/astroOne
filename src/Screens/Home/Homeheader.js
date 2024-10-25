@@ -1,58 +1,104 @@
-import { StyleSheet, Text, View ,TouchableOpacity } from 'react-native'
-import React from 'react'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import Ionicons  from 'react-native-vector-icons/Ionicons'
-import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../config/Style'
-const Homeheader = () => {
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../config/Style';
+
+
+const Homeheader = ({ title = "AstroOne" }) => {
     return (
         <View>
             {myheader()}
         </View>
-    )
+    );
+
     function myheader() {
         return (
-            <View style={{flexDirection:"row" ,justifyContent:"space-between",paddingVertical:SCREEN_HEIGHT*0.015,backgroundColor:"white",paddingHorizontal:SCREEN_WIDTH*0.015}}>
-                <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
-
+            <View style={styles.headerContainer}>
+                <View style={styles.leftSection}>
                     <TouchableOpacity>
                         <FontAwesome
-                            name='bars'
+                            name="bars"
                             size={25}
-                            color={"black"} />
+                            color="black"
+                        />
                     </TouchableOpacity>
                     <View>
-                        <Text style={{ color: "black" ,fontSize:20 ,fontWeight:"500" }}>AstroOne</Text>
+                        <Text style={styles.headerTitle}>{title}</Text>
                     </View>
                 </View>
-                <View style={{flexDirection:"row",alignItems:"center",gap:10,}}>
-                        <TouchableOpacity >
+
+                <View style={styles.rightSection}>
+                    <TouchableOpacity>
                         <FontAwesome
-                        name='bell-o'
-                        size={23}
-                        color={"orange"}/>
-                        </TouchableOpacity>
+                            name="bell-o"
+                            size={23}
+                            color={Colors.primaryTheme}
+                        />
+                    </TouchableOpacity>
 
-                        <TouchableOpacity style={{borderWidth:1 ,borderRadius:10,paddingVertical:SCREEN_HEIGHT*0.002,paddingHorizontal:SCREEN_WIDTH*0.01,borderColor:"orange"}}>
-                        <View style={{flexDirection:"row",gap:5,}}>
-                                <View style={{borderWidth:1,borderRadius:100,padding:2,alignItems:"center"}} >
-                                <Ionicons 
-                                name='wallet-outline'
-                                size={17}
-                                color={"black"}/>
-                                </View>
-
-                                <Text style={{color:"orange"}}>₹ 0.00</Text>
-
+                    <TouchableOpacity style={styles.walletContainer}>
+                        <View style={styles.walletContent}>
+                            <View style={styles.walletIconContainer}>
+                                <Ionicons
+                                    name="wallet-outline"
+                                    size={17}
+                                    color={Colors.primaryTheme}
+                                />
+                            </View>
+                            <Text style={styles.walletText}>₹ 0.00</Text>
                         </View>
-                        </TouchableOpacity>
+                    </TouchableOpacity>
                 </View>
             </View>
-        )
+        );
     }
-}
+};
 
-export default Homeheader
+export default Homeheader;
 
-const styles = StyleSheet.create({})
-
+const styles = StyleSheet.create({
+    headerContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingVertical: SCREEN_HEIGHT * 0.015,
+        backgroundColor: Colors.white,
+        paddingHorizontal: SCREEN_WIDTH * 0.015,
+    },
+    leftSection: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 15,
+    },
+    headerTitle: {
+        color: "black",
+        fontSize: 20,
+        fontWeight: "500",
+    },
+    rightSection: {
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 10,
+    },
+    walletContainer: {
+        borderWidth: 1,
+        borderRadius: 100,
+        paddingVertical: SCREEN_HEIGHT * 0.002,
+        paddingHorizontal: SCREEN_WIDTH * 0.01,
+        borderColor:Colors.primaryTheme,
+    },
+    walletContent: {
+        flexDirection: "row",
+        gap: 5,
+    },
+    walletIconContainer: {
+        borderWidth: 1,
+        borderRadius: 100,
+        padding: 2,
+        alignItems: "center",
+        borderColor:Colors.primaryTheme,
+    },
+    walletText: {
+        color:Colors.primaryTheme,
+    },
+});

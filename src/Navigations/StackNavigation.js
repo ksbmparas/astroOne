@@ -12,6 +12,8 @@ import AstrologerLogin from '../Screens/AstrologerSignup/AstrologerLogin';
 import Shivalya from '../Screens/TempleScreens/Shivalya';
 import VardaniBargad from '../Screens/TempleScreens/VardaniBargad';
 import VerfiedAstrologer from '../Screens/AstrologerSignup/VerfiedAstrologer';
+import ForgotPassword from '../Screens/AstrologerSignup/ForgotPassword';
+import AstroBlog from '../Screens/AstroBlog';
 
 
 const Stack = createStackNavigator();
@@ -31,6 +33,9 @@ const StackNavigation = () => {
             
             <Stack.Screen name="AstrologerLogin" component={AstrologerLogin}/>
             <Stack.Screen name="VerfiedAstrologer" component={VerfiedAstrologer}/>
+            <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
+
+            <Stack.Screen name="AstroBlog" component={AstroBlog}/>
             
         </Stack.Navigator>
     )

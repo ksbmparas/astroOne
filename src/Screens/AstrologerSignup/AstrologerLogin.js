@@ -5,6 +5,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconLock from 'react-native-vector-icons/MaterialIcons';
+import { responsiveScreenHeight, responsiveScreenWidth } from 'react-native-responsive-dimensions';
 
 
 const AstrologerLogin = () => {
@@ -22,11 +23,11 @@ const AstrologerLogin = () => {
                                 textShadowRadius: 1
                             }} />
                     </TouchableOpacity>
-                    <View style={{ marginTop: 30 }}>
+                    <View style={{ marginTop: SCREEN_HEIGHT*0.04 }}>
                         <Text style={styles.txt}>Only For Astrologer</Text>
                     </View>
                 </View>
-                <View style={{ paddingHorizontal: 40, width: '100%', gap: 20, marginTop: SCREEN_HEIGHT * 0.02 }}>
+                <View style={{ paddingHorizontal: SCREEN_HEIGHT*0.05, width: '100%', gap: 20, marginTop: SCREEN_HEIGHT * 0.02 }}>
                     <View style={styles.txtInp}>
                         <Icon name="user-o" size={20} color="gray" style={{ marginLeft: 5 }} />
                         <TextInput
@@ -55,22 +56,24 @@ const AstrologerLogin = () => {
                             keyboardType="email-address"
                         />
                     </View>
-                    <View style={{ width: SCREEN_WIDTH * 0.3, alignSelf: 'flex-end' }}>
-                        <Text style={{ alignSelf: 'flex-end', fontWeight: 'bold', fontSize: 15 }}>Forgot Password</Text>
-                    </View>
-                    <View style={{paddingVertical: 17, borderRadius: 15, alignItems: 'center',backgroundColor:Colors.primaryTheme}}>
-                        <Text style={{ color: Colors.white,fontSize:15, fontWeight: 'bold' }}>Astrologer Login</Text>
+                    <TouchableOpacity
+                        onPress={()=>navigation.navigate('ForgotPassword')} 
+                        style={{ width: SCREEN_WIDTH * 0.3, alignSelf: 'flex-end' }}>
+                        <Text style={{ alignSelf: 'flex-end', fontWeight: 'bold', fontSize:SCREEN_HEIGHT*0.015 }}>Forgot Password</Text>
+                    </TouchableOpacity>
+                    <View style={{paddingVertical: SCREEN_HEIGHT*0.02, borderRadius: 15, alignItems: 'center',backgroundColor:Colors.primaryTheme}}>
+                        <Text style={{ color: Colors.white,fontSize:SCREEN_HEIGHT*0.019, fontWeight: 'bold' }}>Astrologer Login</Text>
                     </View>
                     <TouchableOpacity
                         onPress={()=>navigation.navigate('VerfiedAstrologer')} 
                         style={{ width: SCREEN_WIDTH * 0.4,marginTop:SCREEN_HEIGHT*0.01, alignSelf: 'center',flexDirection:'row'}}>
                         <Icon name="user-o" size={20} color="gray" style={{marginRight:5}} />
-                        <Text style={{ alignSelf: 'center', fontWeight: 'bold', fontSize: 15 }}>Verified Astrologer</Text>
+                        <Text style={{ alignSelf: 'center', fontWeight: 'bold', fontSize: SCREEN_HEIGHT*0.015 }}>Verified Astrologer</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{bottom:-SCREEN_HEIGHT*0.04}}>
+                <View>
                     <Image source={require('../../assets/images/designR.png')}
-                      style={{alignSelf:'center',height:SCREEN_HEIGHT*0.45,width:SCREEN_WIDTH*1}} 
+                      style={{alignSelf:'center',width:responsiveScreenWidth(100), height:responsiveScreenHeight(50), resizeMode:"contain"}} 
                     />
                 </View>
             </View>
@@ -85,12 +88,12 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontWeight: 'bold',
         color: Colors.black,
-        fontSize: 20
+        fontSize: SCREEN_HEIGHT*0.025
     },
     txtInp: {
         width: '100%',
-        paddingHorizontal: 10,
-        paddingVertical: 4,
+        paddingHorizontal: SCREEN_HEIGHT*0.01,
+        paddingVertical: SCREEN_HEIGHT*0.01,
         backgroundColor: '#e3e2de',
         borderRadius: 15,
         elevation: 4,
