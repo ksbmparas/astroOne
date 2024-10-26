@@ -16,6 +16,9 @@ import VardaniBargad from '../Screens/TempleScreens/VardaniBargad';
 import VerfiedAstrologer from '../Screens/AstrologerSignup/VerfiedAstrologer';
 import ForgotPassword from '../Screens/AstrologerSignup/ForgotPassword';
 import AstroBlog from '../Screens/AstroBlog';
+import horoscope from '../Screens/Horoscope/Horoscope';
+import Horoscope from '../Screens/Horoscope/Horoscope';
+import PujaSection from '../Screens/ReligionCollection/PujaSection';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
@@ -37,6 +40,8 @@ const StackNavigation = () => {
             <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
 
             <Stack.Screen name="AstroBlog" component={AstroBlog}/>
+            <Stack.Screen name="Horoscope" component={Horoscope}/>
+            <Stack.Screen name="PujaSection" component={PujaSection}/>
             
         </Stack.Navigator>
     )
