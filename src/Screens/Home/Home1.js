@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React, { useLayoutEffect } from 'react';
-import Homeheader from './HomeHeader'
+import Homeheader from './Homeheader'
 import { SCREEN_WIDTH } from '../../config/Screen'
 import { SCREEN_HEIGHT } from '../../config/Style'
 import { ScrollView } from 'react-native-gesture-handler'
@@ -16,8 +16,9 @@ const Home1 =() => {
       }, [navigation]);
     return (
         <View style={{ flex: 1, }}>
-            <Homeheader   />
+            <Homeheader />
             <ScrollView style={{ paddingHorizontal: SCREEN_WIDTH * 0.02 }}>
+                {/* {AstroBlog()} */}
                 {ASTROONENOTE()}
                 {CARD1()}
                 {banner()}
@@ -44,6 +45,18 @@ const Home1 =() => {
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "800" }}>Auspicious and Inauspicious time</Text>
                 
             </View>)
+    }
+
+    function AstroBlog() {
+        return (
+            <View>
+                <TouchableOpacity
+                    onPress={()=>navigation.navigate('AstroBlog')}
+                    style={{ paddingVertical: SCREEN_HEIGHT * 0.01 }}>
+                    <Text style={{ color: "black", fontSize: 16, fontWeight: "500" }}>AstroBlogs</Text>
+                </TouchableOpacity>
+            </View>
+        )
     }
     function CARD1() {
         return (
@@ -114,34 +127,43 @@ const Home1 =() => {
 
                         <View >
                             <TouchableOpacity
-                                onPress={() => navigation.navigate('Home')}
+                                onPress={() => navigation.navigate('Sanatan')}
                                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                                 <Image
                                     style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
                                     source={require('../../assets/images/worship1.png')} />
                             </TouchableOpacity>
                         </View>
-                        <View style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
-                            <Image
-                                style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
-                                source={require('../../assets/images/worship2.png')} />
+                        <View>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('Navgrah')}
+                                style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
+                                <Image
+                                    style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
+                                    source={require('../../assets/images/worship2.png')} />
+                            </TouchableOpacity>
                         </View>
+
 
                     </View>
 
                     <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
 
-                        <View style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('VardaniBargad')}
+                            style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                             <Image
                                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
                                 source={require('../../assets/images/worship3.png')} />
-                        </View>
+                        </TouchableOpacity>
 
-                        <View style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('Shivalya')}
+                            style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, }}>
                             <Image
                                 style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.4, resizeMode: "contain" }}
                                 source={require('../../assets/images/worship4.png')} />
-                        </View>
+                        </TouchableOpacity>
 
                     </View>
                 </View>
@@ -157,9 +179,9 @@ const Home1 =() => {
                 <Text style={{color:Colors.background_theme1,fontSize: 20,fontWeight: "900" }}>|</Text>
                     <Text style={{ color: "black", fontSize: 16, fontWeight: "800" }}>Complete Horoscope Solution</Text>
                 </View>
-                <TouchableOpacity style={{ alignItems: "center" ,borderRadius:10,overflow:"hidden" }}>
+                <TouchableOpacity style={{ alignItems: "center" }}>
                     <Image
-                        style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode:"cover" }}
+                        style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
                         source={require('../../assets/images/BANNER2.png')} />
                 </TouchableOpacity>
 
@@ -249,8 +271,6 @@ const Home1 =() => {
                             <Text style={{ color: "black", fontSize: 13, }}>उज्जैन से सीधा प्रसारण</Text>
                             <Text style={{ color: "gray", fontSize: 13, }}>घर बैठे दिव्यदर्शन</Text>
                         </TouchableOpacity>
-                         
-
                         <TouchableOpacity style={{ borderWidth: 1, height: SCREEN_HEIGHT * 0.3, width: SCREEN_WIDTH * 0.39, alignItems: "center", borderRadius: 10, backgroundColor: "white", borderColor: "gray", elevation: 3 }}>
                             <Image
                                 style={{ height: SCREEN_HEIGHT * 0.25, width: SCREEN_WIDTH * 0.38, borderRadius: 10, resizeMode: "contain" }}

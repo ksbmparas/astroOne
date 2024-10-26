@@ -2,7 +2,7 @@ import { StyleSheet, Text, View,Image,TouchableOpacity } from 'react-native'
 import React ,{ useLayoutEffect }from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { SCREEN_HEIGHT,SCREEN_WIDTH } from '../../config/Style';
-import Homeheader from '../Home/HomeHeader';
+import Homeheader from '../Home/Homeheader';
 
 const live = () => {
   const navigation = useNavigation();

@@ -11,31 +11,31 @@ import {
     ImageBackground,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { Colors, Fonts, SCREEN_HEIGHT, SCREEN_WIDTH } from '../config/Style';
+import { Colors, Fonts, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../config/Style';
 import { StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const images = [
-    { id: '1', source: require('../images/Ramjii.png') },
-    { id: '2', source: require('../images/hanumanji.png') },
-    { id: '3', source: require('../images/shivji.png') },
-    { id: '4', source: require('../images/Ramjii.png') },
-    { id: '5', source: require('../images/hanumanji.png')},
-    { id: '6', source: require('../images/shivji.png') },
-    { id: '7', source: require('../images/Ramjii.png') },
-    { id: '8', source: require('../images/shivji.png') },
+    { id: '1', source: require('../../images/Ramjii.png') },
+    { id: '2', source: require('../../images/hanumanji.png') },
+    { id: '3', source: require('../../images/shivji.png') },
+    { id: '4', source: require('../../images/Ramjii.png') },
+    { id: '5', source: require('../../images/hanumanji.png')},
+    { id: '6', source: require('../../images/shivji.png') },
+    { id: '7', source: require('../../images/Ramjii.png') },
+    { id: '8', source: require('../../images/shivji.png') },
 ];
 
 const pujaAssets = [
-    { id: '1', source: require('../images/sun.png') },
-    { id: '2', source: require('../images/flower1.png') },
-    { id: '3', source: require('../images/lamp.png') },
-    { id: '4', source: require('../images/coconut.png') },
-    { id: '5', source: require('../images/shankh_golden.png') },
-    { id: '6', source: require('../images/calendarr.png')},
+    { id: '1', source: require('../../images/sun.png') },
+    { id: '2', source: require('../../images/flower1.png') },
+    { id: '3', source: require('../../images/lamp.png') },
+    { id: '4', source: require('../../images/coconut.png') },
+    { id: '5', source: require('../../images/shankh_golden.png') },
+    { id: '6', source: require('../../images/calendarr.png')},
 ];
 
-const NewHomeAstroOne = () => {
+const Shivalya = () => {
     const navigation = useNavigation()
     const [selectedIndex, setSelectedIndex] = useState(0);
     const scrollViewRef = useRef(null);
@@ -75,7 +75,7 @@ const NewHomeAstroOne = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
+            <StatusBar backgroundColor={Colors.primaryTheme} barStyle={'dark-content'} />
 
             {/* Header */}
             <View style={styles.header}>
@@ -100,14 +100,14 @@ const NewHomeAstroOne = () => {
 
             {/* Background Image */}
             <Image
-                source={require('../images/outer_temple1.png')}
+                source={require('../../images/outer_temple1.png')}
                 resizeMode="cover"
                 style={styles.templeImage}
             />
 
             {/* Scrollable Images inside the Temple background */}
             <View style={styles.centeredImageContainer}>
-                <ImageBackground source={require('../images/innerTemple.png')}
+                <ImageBackground source={require('../../images/innerTemple.png')}
                     style={{
                         width: SCREEN_WIDTH * 1.15,
                         height: SCREEN_HEIGHT * 0.45, 
@@ -153,15 +153,8 @@ const NewHomeAstroOne = () => {
     );
 };
 
-export default NewHomeAstroOne;
+export default Shivalya;
 
-
-function innerimage() {
-    return (
-        <ImageBackground source={require('../images/innerTemple.png')}
-            style={{ height: SCREEN_HEIGHT * 1, width: SCREEN_WIDTH * 1, position: 'absolute', alignSelf: 'center' }} />
-    )
-}
 
 const styles = StyleSheet.create({
     container: {

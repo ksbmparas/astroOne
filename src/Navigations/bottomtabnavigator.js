@@ -12,6 +12,7 @@ import { Colors } from '../config/Style';
 import chat from '../Screens/tabScreens/chat';
 import Profile from '../Screens/tabScreens/Profile';
 import Call1 from '../Screens/tabScreens/Call1';
+import AstroBlog from '../Screens/AstroBlog';
 
 
 const Tab = createBottomTabNavigator();
@@ -26,8 +27,8 @@ const bottomtabnavigator = () => {
             
         }}>
 
-            <Tab.Screen name='Profile' component={Profile} options={{
-                tabBarLabel: 'Profile',
+            <Tab.Screen name='AstroBlog' component={AstroBlog} options={{
+                tabBarLabel: 'AstroBlog',
                 tabBarIcon: ({ color, size }) => (
                     <Feather name="edit" color={color} size={size - 3} />
                 ),

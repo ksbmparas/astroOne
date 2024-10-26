@@ -4,7 +4,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import Entypo from 'react-native-vector-icons/Entypo'
 import Colors from '../../config/Style'
-import Homeheader from '../Home/HomeHeader'
+import Homeheader from '../Home/Homeheader'
 
 
 import { useNavigation } from '@react-navigation/native';

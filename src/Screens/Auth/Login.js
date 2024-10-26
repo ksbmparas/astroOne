@@ -19,7 +19,7 @@ const Login = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
-      <StatusBar backgroundColor={Colors.white} barStyle={'dark-content'} />
+      <StatusBar backgroundColor={Colors.primaryTheme} barStyle={'dark-content'} />
       <View>
         <View>
           <ImageBackground source={require('../../images/design.png')} style={styles.bgImg}>
@@ -60,7 +60,8 @@ const Login = () => {
             />
           </View>
 
-          <TouchableOpacity style={{ width: '100%', paddingVertical: 15, backgroundColor: Colors.primaryTheme, borderRadius: 15, alignItems: 'center', elevation: 4 }} onPress={() => { navigation.navigate('Otp') }}>
+          <TouchableOpacity style={{ width: '100%', paddingVertical: 15, backgroundColor: Colors.primaryTheme, borderRadius: 15, alignItems: 'center', elevation: 4 }}
+            onPress={() => { navigation.navigate('Otp') }}>
             <Text style={{
               alignSelf: 'center',
               color: Colors.white,
@@ -69,9 +70,10 @@ const Login = () => {
             }}>Login</Text>
           </TouchableOpacity>
 
-          <View style={{ width: '100%', paddingVertical: 15, borderRadius: 15, alignItems: 'center', borderWidth: 1, borderColor: Colors.primaryTheme }}>
+          <TouchableOpacity style={{ width: '100%', paddingVertical: 15, borderRadius: 15, alignItems: 'center', borderWidth: 1, borderColor: Colors.primaryTheme }}
+            onPress={() => { navigation.navigate('AstrologerLogin') }}>
             <Text style={{ color: Colors.primaryTheme, fontWeight: 'bold' }}>Astrologer Login</Text>
-          </View>
+          </TouchableOpacity>
 
           <View style={{ width: '100%', }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -135,7 +137,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 10,
     paddingVertical: 4,
-    backgroundColor: '#dcd6c6',
+    backgroundColor: '#e3e2de',
     borderRadius: 10,
     elevation: 4,
     flexDirection: 'row',

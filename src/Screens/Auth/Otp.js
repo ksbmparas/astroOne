@@ -30,7 +30,7 @@ const Otp = () => {
 
     function VerifyButton() {
         return (
-            <TouchableOpacity style={{ width: '100%', paddingVertical: 18, backgroundColor: 'orange', borderRadius: 10, alignItems: 'center', elevation: 4, }} onPress={() => { navigation.navigate('home1') }}>
+            <TouchableOpacity style={{ width: '100%', paddingVertical: 18, backgroundColor: 'orange', borderRadius: 10, alignItems: 'center', elevation: 4, }} onPress={() => { navigation.navigate('Home1') }}>
                 <Text style={{ ...Fonts._14MontserratBoldWhite }}>Verify</Text>
             </TouchableOpacity>
         )
