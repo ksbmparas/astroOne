@@ -21,6 +21,9 @@ import KundliToptabs from './KundliToptabs';
 import Myheader from '../Screens/Components/Myheader';
 import MatchingToptabs from './MatchingToptabs';
 import ReferEarn from '../Screens/ReferEarn';
+// import horoscope from '../Screens/Horoscope/Horoscope';
+import Horoscope from '../Screens/Horoscope/Horoscope';
+import PujaSection from '../Screens/ReligionCollection/PujaSection';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
@@ -48,6 +51,9 @@ const StackNavigation = () => {
             <Stack.Screen name='ReferEarn' component={ReferEarn}/>
           
 
+            <Stack.Screen name="AstroBlog" component={AstroBlog}/>
+            <Stack.Screen name="Horoscope" component={Horoscope}/>
+            <Stack.Screen name="PujaSection" component={PujaSection}/>
             
            
 
