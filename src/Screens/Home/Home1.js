@@ -88,28 +88,14 @@ const Home1 = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
+
+               
                 <TouchableOpacity style={{alignItems:"center",bottom:SCREEN_HEIGHT*0.14,}}>
                                 <Image 
                                 style={{height:SCREEN_HEIGHT*0.05,width:SCREEN_WIDTH*0.24}}
                                 source={require('../../assets/images/panchang.png')}/>
                               
                             </TouchableOpacity>
-                <TouchableOpacity style={{ height: responsiveScreenHeight(6), width: responsiveScreenWidth(95), alignItems: 'center', bottom: SCREEN_HEIGHT * 0.14 }}>
-                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                        <Image
-                            style={{ height: SCREEN_HEIGHT * 0.05, width: SCREEN_WIDTH * 0.2 }}
-                            source={require('../../assets/images/letter.png')}
-                        />
-                        <Text style={{
-                            position: 'absolute',
-                            fontSize: responsiveScreenFontSize(1),
-                            color: Colors.black,
-                            fontWeight: 'bold'
-                        }}>
-                            Panchang
-                        </Text>
-                    </View>
-                </TouchableOpacity>
             </View>)
     }
     function banner() {
@@ -219,10 +205,11 @@ const Home1 = () => {
                 <TouchableOpacity 
                   onPress={()=>navigation.navigate('Matching')}
                 style={{ alignItems: "center" ,borderRadius:10,borderRadius:10,overflow:"hidden",}}>
-                <TouchableOpacity style={{ alignItems: "center", borderRadius: 10, borderRadius: 10, overflow: "hidden", }}>
+                <View style={{ alignItems: "center", borderRadius: 10, borderRadius: 10, overflow: "hidden", }}>
                     <Image
                         style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "cover" }}
                         source={require('../../assets/images/banner3.png')} />
+                        </View>
                 </TouchableOpacity>
 
             </View>
@@ -274,12 +261,12 @@ const Home1 = () => {
                 <TouchableOpacity 
                 onPress={()=>navigation.navigate('ReferEarn')}
                 style={{ alignItems: "center",borderRadius:10,overflow:"hidden"}}>
-                <TouchableOpacity style={{ alignItems: "center", borderRadius: 10, overflow: "hidden" }}>
+                <View style={{ alignItems: "center", borderRadius: 10, overflow: "hidden" }}>
                     <Image
                         style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "cover" }}
                         source={require('../../assets/images/banner7.png')} />
+                </View>
                 </TouchableOpacity>
-
             </View>
         )
     }

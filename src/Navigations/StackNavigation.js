@@ -44,7 +44,7 @@ const StackNavigation = () => {
             <Stack.Screen name="VerfiedAstrologer" component={VerfiedAstrologer} />
             <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
 
-            <Stack.Screen name="AstroBlog" component={AstroBlog} />
+            {/* <Stack.Screen name="AstroBlog" component={AstroBlog} /> */}
 
             <Stack.Screen name="Kundli" component={KundliToptabs} />
             <Stack.Screen name="Matching" component={MatchingToptabs} />
