@@ -18,7 +18,7 @@ const Home1 =() => {
         <View style={{ flex: 1, }}>
             <Homeheader />
             <ScrollView style={{ paddingHorizontal: SCREEN_WIDTH * 0.02 }}>
-                {/* {AstroBlog()} */}
+              
                 {ASTROONENOTE()}
                 {CARD1()}
                 {banner()}
@@ -85,12 +85,12 @@ const Home1 =() => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={{alignItems:"center",bottom:SCREEN_HEIGHT*0.14,}}>
+                <TouchableOpacity style={{alignItems:"center",bottom:SCREEN_HEIGHT*0.14,}}>
                                 <Image 
-                                style={{height:SCREEN_HEIGHT*0.05,width:SCREEN_WIDTH*0.2}}
-                                source={require('../../assets/images/letter.png')}/>
+                                style={{height:SCREEN_HEIGHT*0.05,width:SCREEN_WIDTH*0.24}}
+                                source={require('../../assets/images/panchang.png')}/>
                               
-                            </View>
+                            </TouchableOpacity>
             </View>)
     }
     function banner() {
@@ -179,9 +179,11 @@ const Home1 =() => {
                 <Text style={{color:Colors.background_theme1,fontSize: 20,fontWeight: "900" }}>|</Text>
                     <Text style={{ color: "black", fontSize: 16, fontWeight: "800" }}>Complete Horoscope Solution</Text>
                 </View>
-                <TouchableOpacity style={{ alignItems: "center" }}>
+                <TouchableOpacity 
+                onPress={()=>navigation.navigate('Kundli')}
+                style={{ alignItems: "center" ,borderRadius:10,overflow:"hidden"}}>
                     <Image
-                        style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode: "contain" }}
+                        style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode:"cover" }}
                         source={require('../../assets/images/BANNER2.png')} />
                 </TouchableOpacity>
 
@@ -195,7 +197,9 @@ const Home1 =() => {
                 <Text style={{color:Colors.background_theme1,fontSize: 20,fontWeight: "900" }}>|</Text>
                     <Text style={{ color: "black", fontSize: 16, fontWeight: "800" }}> Horoscope Matching</Text>
                 </View>
-                <TouchableOpacity style={{ alignItems: "center" ,borderRadius:10,borderRadius:10,overflow:"hidden",}}>
+                <TouchableOpacity 
+                  onPress={()=>navigation.navigate('Matching')}
+                style={{ alignItems: "center" ,borderRadius:10,borderRadius:10,overflow:"hidden",}}>
                     <Image
                         style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode:"cover" }}
                         source={require('../../assets/images/banner3.png')} />
@@ -243,7 +247,9 @@ const Home1 =() => {
                 <Text style={{color:Colors.background_theme1,fontSize: 20,fontWeight: "900" }}>|</Text>
                     <Text style={{ color: "black", fontSize: 16, fontWeight: "800" }}>AstroOne Special Devotee Rosery</Text>
                 </View>
-                <TouchableOpacity style={{ alignItems: "center",borderRadius:10,overflow:"hidden"}}>
+                <TouchableOpacity 
+                onPress={()=>navigation.navigate('ReferEarn')}
+                style={{ alignItems: "center",borderRadius:10,overflow:"hidden"}}>
                     <Image
                         style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1, resizeMode:"cover" }}
                         source={require('../../assets/images/banner7.png')} />

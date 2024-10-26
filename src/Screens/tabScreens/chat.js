@@ -27,7 +27,7 @@ const chat = () => {
     function search() {
         return (
             <View style={{ paddingVertical: SCREEN_HEIGHT * 0.02 }}>
-                <View style={{ borderWidth: 1.5, flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: SCREEN_WIDTH * 0.04, borderRadius: 10, borderColor: "gray", backgroundColor: "#FFDBBB" }}>
+                <View style={{ borderWidth: 1.5, flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: SCREEN_WIDTH * 0.04, borderRadius: 10, borderColor: "gray", backgroundColor: "#FFDBBB" ,}}>
                     <AntDesign name='search1' color={"gray"} size={25} />
                     <TextInput
                         style={{ fontSize: 12 }}

@@ -16,28 +16,44 @@ import VardaniBargad from '../Screens/TempleScreens/VardaniBargad';
 import VerfiedAstrologer from '../Screens/AstrologerSignup/VerfiedAstrologer';
 import ForgotPassword from '../Screens/AstrologerSignup/ForgotPassword';
 import AstroBlog from '../Screens/AstroBlog';
+import Kundli from '../Screens/Kundli/Kundli';
+import KundliToptabs from './KundliToptabs';
+import Myheader from '../Screens/Components/Myheader';
+import MatchingToptabs from './MatchingToptabs';
+import ReferEarn from '../Screens/ReferEarn';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
     return (
         <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }} initialRouteName='Splash'>
-            <Stack.Screen name="Login" component={Login}/>
+            <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Otp" component={Otp} />
             <Stack.Screen name="Home1" component={bottomtabnavigator} />
             <Stack.Screen name="Homeheader" component={Homeheader} />
-            <Stack.Screen name="Splash" component={Splash}/>
+            <Stack.Screen name="Splash" component={Splash} />
 
-            <Stack.Screen name="Sanatan" component={Sanatan}/>
-            <Stack.Screen name="Navgrah" component={Navgrah}/>
-            <Stack.Screen name="VardaniBargad" component={VardaniBargad}/>
-            <Stack.Screen name="Shivalya" component={Shivalya}/>
-            
-            <Stack.Screen name="AstrologerLogin" component={AstrologerLogin}/>
-            <Stack.Screen name="VerfiedAstrologer" component={VerfiedAstrologer}/>
-            <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
+            <Stack.Screen name="Sanatan" component={Sanatan} />
+            <Stack.Screen name="Navgrah" component={Navgrah} />
+            <Stack.Screen name="VardaniBargad" component={VardaniBargad} />
+            <Stack.Screen name="Shivalya" component={Shivalya} />
 
-            <Stack.Screen name="AstroBlog" component={AstroBlog}/>
+            <Stack.Screen name="AstrologerLogin" component={AstrologerLogin} />
+            <Stack.Screen name="VerfiedAstrologer" component={VerfiedAstrologer} />
+            <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+
+            <Stack.Screen name="AstroBlog" component={AstroBlog} />
+
+            <Stack.Screen name="Kundli" component={KundliToptabs} />
+            <Stack.Screen name="Matching" component={MatchingToptabs} />
+            <Stack.Screen name='ReferEarn' component={ReferEarn}/>
+          
+
             
+           
+
+
+
+
         </Stack.Navigator>
     )
 }
