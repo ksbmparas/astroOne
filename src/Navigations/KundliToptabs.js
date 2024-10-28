@@ -4,6 +4,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import NewKundli from '../Screens/Kundli/NewKundli';
 import OpenKundli from '../Screens/Kundli/OpenKundli';
 import Myheader from '../Screens/Components/Myheader';
+import { SCREEN_HEIGHT ,SCREEN_WIDTH} from '../config/Style';
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -13,14 +14,13 @@ const KundliToptabs = () => {
             <Myheader title={'Kundli'}/>
         <Tab.Navigator initialRouteName='OpenKundli' screenOptions={{
             tabBarStyle: {
-                tabBarIndicatorStyle: {
-                    backgroundColor: '#indicatorColor', // Set the indicator line color
-                    height: 3, // Optional: set the thickness of the indicator line
-                },
+               
                 backgroundColor: '#FDE2B3',
-            }, tabBarLabelStyle: {
-                fontWeight: "500"
             },
+            tabBarIndicatorStyle: {
+                backgroundColor: 'white',
+               
+              },
         }}
         >
             <Tab.Screen name='OpenKundli' component={OpenKundli} />

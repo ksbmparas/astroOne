@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './src/Navigations/StackNavigation';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-gesture-handler';
+import DrawerContent from './src/Navigations/DrawerContent';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home1 from './src/Screens/Home/Home1';
 
@@ -12,8 +13,15 @@ const App = () => {
   return (
     <GestureHandlerRootView>
       <NavigationContainer>
-        <Drawer.Navigator  initialRouteName="Home1"  screenOptions={{headerShown:false}}>
-          <Drawer.Screen name="Home1" component={StackNavigation} />
+       
+        <Drawer.Navigator  drawerContent={props => <DrawerContent{...props}/>} initialRouteName="Home1"  
+          screenOptions={({ route }) => ({
+            headerShown: false,
+            swipeEnabled: route.name === "Home1", 
+            
+          })}
+          >
+          <Drawer.Screen screenOptions name="Home1" component={StackNavigation} />
 
         </Drawer.Navigator>
       </NavigationContainer>

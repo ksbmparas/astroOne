@@ -24,10 +24,16 @@ import ReferEarn from '../Screens/ReferEarn';
 // import horoscope from '../Screens/Horoscope/Horoscope';
 import Horoscope from '../Screens/Horoscope/Horoscope';
 import PujaSection from '../Screens/ReligionCollection/PujaSection';
+import { NavigationContainer } from '@react-navigation/native';
+import GiftToptabs from './GiftToptabs';
+import OrderHistory from '../Screens/OrderHistory';
+import Following from '../Screens/Following';
+import CustomerTestimonials from './CustomerTestimonials';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
     return (
+    
         <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }} initialRouteName='Splash'>
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Otp" component={Otp} />
@@ -54,6 +60,11 @@ const StackNavigation = () => {
             <Stack.Screen name="AstroBlog" component={AstroBlog}/>
             <Stack.Screen name="Horoscope" component={Horoscope}/>
             <Stack.Screen name="PujaSection" component={PujaSection}/>
+
+            <Stack.Screen name="Gifts" component={GiftToptabs}/>
+            <Stack.Screen name="OrderHistory" component={OrderHistory}/>
+            <Stack.Screen name="Following" component={Following}/>
+            <Stack.Screen name="CustomerTestimonials" component={CustomerTestimonials}/>
             
            
 
@@ -61,6 +72,7 @@ const StackNavigation = () => {
 
 
         </Stack.Navigator>
+    
     )
 }
 

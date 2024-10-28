@@ -3,9 +3,11 @@ import React from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../config/Style';
+import { useNavigation } from '@react-navigation/native';
 
 
 const Homeheader = ({ title = "AstroOne" }) => {
+    const navigation=useNavigation();
     return (
         <View>
             {myheader()}
@@ -16,7 +18,8 @@ const Homeheader = ({ title = "AstroOne" }) => {
         return (
             <View style={styles.headerContainer}>
                 <View style={styles.leftSection}>
-                    <TouchableOpacity>
+                    <TouchableOpacity 
+                   onPress={() => navigation.openDrawer()}>
                         <FontAwesome
                             name="bars"
                             size={25}
