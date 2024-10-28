@@ -24,6 +24,12 @@ import ReferEarn from '../Screens/ReferEarn';
 // import horoscope from '../Screens/Horoscope/Horoscope';
 import Horoscope from '../Screens/Horoscope/Horoscope';
 import PujaSection from '../Screens/ReligionCollection/PujaSection';
+import Aarti from '../Screens/ReligionCollection/Aarti';
+import DetailPujaScreens from '../Screens/ReligionCollection/DetailPujaScreens';
+import Chalisa from '../Screens/ReligionCollection/Chalisa';
+import BeejMantra from '../Screens/ReligionCollection/BeejMantra';
+import Kavach from '../Screens/ReligionCollection/Kavachas';
+import BookPooja from '../Screens/ReligionCollection/BookPooja';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
@@ -53,9 +59,10 @@ const StackNavigation = () => {
 
             <Stack.Screen name="AstroBlog" component={AstroBlog}/>
             <Stack.Screen name="Horoscope" component={Horoscope}/>
+
             <Stack.Screen name="PujaSection" component={PujaSection}/>
-            
-           
+            <Stack.Screen name="DetailPujaScreens" component={DetailPujaScreens}/>
+            <Stack.Screen name='BookPooja' component={BookPooja}/>
 
 
 
