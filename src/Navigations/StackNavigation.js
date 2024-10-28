@@ -29,6 +29,12 @@ import GiftToptabs from './GiftToptabs';
 import OrderHistory from '../Screens/OrderHistory';
 import Following from '../Screens/Following';
 import CustomerTestimonials from './CustomerTestimonials';
+import Aarti from '../Screens/ReligionCollection/Aarti';
+import DetailPujaScreens from '../Screens/ReligionCollection/DetailPujaScreens';
+import Chalisa from '../Screens/ReligionCollection/Chalisa';
+import BeejMantra from '../Screens/ReligionCollection/BeejMantra';
+import Kavach from '../Screens/ReligionCollection/Kavachas';
+import BookPooja from '../Screens/ReligionCollection/BookPooja';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
@@ -59,6 +65,7 @@ const StackNavigation = () => {
 
             <Stack.Screen name="AstroBlog" component={AstroBlog}/>
             <Stack.Screen name="Horoscope" component={Horoscope}/>
+
             <Stack.Screen name="PujaSection" component={PujaSection}/>
 
             <Stack.Screen name="Gifts" component={GiftToptabs}/>
@@ -67,6 +74,8 @@ const StackNavigation = () => {
             <Stack.Screen name="CustomerTestimonials" component={CustomerTestimonials}/>
             
            
+            <Stack.Screen name="DetailPujaScreens" component={DetailPujaScreens}/>
+            <Stack.Screen name='BookPooja' component={BookPooja}/>
 
 
 

@@ -1,7 +1,7 @@
 import { FlatList, Image, ImageBackground, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../config/Style'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation,} from '@react-navigation/native'
 import { responsiveScreenFontSize, responsiveScreenHeight, responsiveScreenWidth } from 'react-native-responsive-dimensions'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
@@ -43,7 +43,10 @@ const PujaSection = () => {
                     keyExtractor={(item) => item}
                     numColumns={3}
                     renderItem={({ item }) => (
-                        <TouchableOpacity style={styles.touchable}>
+                        <TouchableOpacity
+                            style={styles.touchable}
+                            onPress={() => navigation.navigate('DetailPujaScreens', { itemName: item })}
+                        >
                             <Image
                                 source={aartiImages[item]}
                                 style={styles.touchableImage}
@@ -59,6 +62,7 @@ const PujaSection = () => {
                         </View>
                     }
                 />
+
             </ImageBackground>
         </SafeAreaView>
     )
@@ -67,16 +71,16 @@ const PujaSection = () => {
 const BookVirtualPuja = () => {
     const navigation = useNavigation()
     return (
-        <View style={{padding:SCREEN_WIDTH*0.02}}>
-            <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01, flexDirection: "row", alignItems: "flex-end", gap: 5 }}>
-                <Text style={{ color: Colors.primaryTheme, fontSize: 20, fontWeight: "bold", marginLeft:SCREEN_WIDTH*0.01 }}>|</Text>
+        <View style={{ padding: SCREEN_WIDTH * 0.02 }}>
+            <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01, flexDirection: "row", alignItems: "flex-end", gap: 5, marginBottom: responsiveScreenHeight(2) }}>
+                <Text style={{ color: Colors.primaryTheme, fontSize: 20, fontWeight: "bold", marginLeft: SCREEN_WIDTH * 0.01 }}>|</Text>
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "bold" }}>Book Virtual Puja</Text>
             </View>
             <TouchableOpacity
-                onPress={() => navigation.navigate('PujaSection')}
-                style={{ alignItems: "center", borderRadius: 10, overflow: "hidden" }}>
+                onPress={() => navigation.navigate('BookPooja')}
+                style={{ alignItems: "center", borderRadius: 15, overflow: "hidden" }}>
                 <Image
-                    style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1 }}
+                    style={{ height: SCREEN_HEIGHT * 0.24, width: SCREEN_WIDTH * 0.98, elevation: 1 }}
                     source={require('../../assets/images/bookpooj.png')} />
             </TouchableOpacity>
 
@@ -87,16 +91,16 @@ const BookVirtualPuja = () => {
 const DevotionalSongs = () => {
     const navigation = useNavigation()
     return (
-        <View style={{padding:SCREEN_WIDTH*0.02}}>
-            <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01, flexDirection: "row", alignItems: "flex-end", gap: 5 }}>
-                <Text style={{ color: Colors.primaryTheme, fontSize: 20, fontWeight: "bold",marginLeft:SCREEN_WIDTH*0.01 }}>|</Text>
+        <View style={{ padding: SCREEN_WIDTH * 0.02 }}>
+            <View style={{ paddingVertical: SCREEN_HEIGHT * 0.01, flexDirection: "row", alignItems: "flex-end", gap: 5, marginBottom: responsiveScreenHeight(2) }}>
+                <Text style={{ color: Colors.primaryTheme, fontSize: 20, fontWeight: "bold", marginLeft: SCREEN_WIDTH * 0.01 }}>|</Text>
                 <Text style={{ color: "black", fontSize: 16, fontWeight: "bold" }}>Devotional Songs</Text>
             </View>
             <TouchableOpacity
                 onPress={() => navigation.navigate('PujaSection')}
-                style={{ alignItems: "center", borderRadius: 10, overflow: "hidden" }}>
+                style={{ alignItems: "center", borderRadius: 15, overflow: "hidden" }}>
                 <Image
-                    style={{ height: SCREEN_HEIGHT * 0.2, width: SCREEN_WIDTH * 0.98, elevation: 1 }}
+                    style={{ height: SCREEN_HEIGHT * 0.24, width: SCREEN_WIDTH * 0.98, elevation: 1 }}
                     source={require('../../assets/images/newdesong.png')} />
             </TouchableOpacity>
 
@@ -138,8 +142,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     touchableImage: {
-        width: responsiveScreenWidth(28),
-        height: responsiveScreenWidth(26),
+        width: responsiveScreenWidth(30),
+        height: responsiveScreenWidth(30),
         borderColor: Colors.black,
         borderRadius: 10
     },
@@ -149,4 +153,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         bottom: -responsiveScreenHeight(-2.5)
     },
+    flatListContainer: {
+        paddingTop: responsiveScreenHeight(2)
+    }
 })
