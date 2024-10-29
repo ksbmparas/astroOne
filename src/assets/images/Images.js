@@ -4,3 +4,4 @@ export const mainlogo3 = require('../images/login_border.png')
 export const googlee = require('../images/google.webp')
 export const facebook = require('../images/facebook.jpg')
 export const kundlibg =require('../images/Kundlibackground.png')
+ 

@@ -1,22 +1,25 @@
-import { StyleSheet, Text, View ,Image,Linking} from 'react-native'
+import { StyleSheet, Text, View ,Image,Linking,TouchableOpacity} from 'react-native'
 import React from 'react'
 import { DrawerContentScrollView } from '@react-navigation/drawer'
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../config/Style'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Colors from '../config/Style'
-import { TouchableOpacity } from 'react-native-gesture-handler';
+
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
+import { Modal } from 'react-native';
+import { useState } from 'react';
 
-const DrawerContent  = (props) => {
-    const navigation=useNavigation();
+const DrawerContent  = () => {
+  
+   const navigation=useNavigation();
   return (
     <View style={{flex:1 ,}}>
-        < DrawerContentScrollView {...props} >
+        < DrawerContentScrollView  >
 
         {topcontent()}
         {middlecontent()}
@@ -25,8 +28,8 @@ const DrawerContent  = (props) => {
         
         
         </DrawerContentScrollView>
-        
-    
+       
+        {/* {myModal()} */}
     </View>
   )
         function topcontent(){
@@ -90,7 +93,9 @@ const DrawerContent  = (props) => {
                     <Text style={{fontSize:12,fontWeight:"500",color:"black"}}>Order History</Text>
                     </TouchableOpacity> 
 
-                    <TouchableOpacity style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
+                    <TouchableOpacity 
+                    
+                    style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
                     <View>
                     <MaterialCommunityIcons
                             name='message-text-clock'
@@ -102,7 +107,9 @@ const DrawerContent  = (props) => {
                     <Text style={{fontSize:12,fontWeight:"500",color:"black"}}>Change Language</Text>
                     </TouchableOpacity> 
 
-                    <TouchableOpacity style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
+                    <TouchableOpacity 
+                      onPress={()=> navigation.navigate('EorderHistory')}
+                    style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
                     <View>
                     <FontAwesome6
                             name='building-columns'
@@ -128,7 +135,9 @@ const DrawerContent  = (props) => {
                     <Text style={{fontSize:12,fontWeight:"500",color:"black"}}>Following</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
+                    <TouchableOpacity 
+                       onPress={()=> navigation.navigate('HowtoUse')}
+                    style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
                     <View>
                     <MaterialIcons
                             name='smartphone'
@@ -155,7 +164,9 @@ const DrawerContent  = (props) => {
                     <Text style={{fontSize:12,fontWeight:"500",color:"black"}}>Customers Testimonials</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
+                    <TouchableOpacity 
+                      onPress={()=> navigation.navigate('ReferEarn')}
+                    style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
                     <View>
                     <FontAwesome5
                             name='people-arrows'
@@ -167,7 +178,9 @@ const DrawerContent  = (props) => {
                     <Text style={{fontSize:12,fontWeight:"500",color:"black"}}>Refer and Earn</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
+                    <TouchableOpacity
+                      onPress={()=> navigation.navigate('HowtoUse')}
+                    style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
                     <View>
                     <MaterialIcons
                             name='support-agent'
@@ -179,7 +192,9 @@ const DrawerContent  = (props) => {
                     <Text style={{fontSize:12,fontWeight:"500",color:"black"}}>Help and Support</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
+                    <TouchableOpacity 
+                     onPress={()=> navigation.navigate('About')}
+                    style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
                     <View>
                     <Entypo
                             name='info-with-circle'
@@ -191,7 +206,9 @@ const DrawerContent  = (props) => {
                     <Text style={{fontSize:12,fontWeight:"500",color:"black"}}>About AstroOne</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
+                    <TouchableOpacity
+                     onPress={()=> navigation.navigate('Login')}
+                    style={{flexDirection:"row",alignItems:"center",gap:15,paddingVertical:SCREEN_HEIGHT*0.01,borderBottomWidth:1,borderBottomColor:"gray",paddingHorizontal:SCREEN_WIDTH*0.04}}>
                     <View>
                     <Entypo
                             name='log-out'
@@ -246,6 +263,44 @@ const DrawerContent  = (props) => {
 
                 </View>
         )}
+
+        function myModal(){
+            return(
+                <Modal visible={true}>
+                            <View style={{flex:1,backgroundColor: 'rgba(0, 0, 0, 0.5)',borderWidth:1,justifyContent:"center",alignItems:"center"}}>
+
+                                <View style={{width:"80%",height:"20%",backgroundColor:"white",borderRadius:10 ,borderWidth:1}}>
+
+                                            <View style={{alignItems:"center",paddingTop:SCREEN_HEIGHT*0.02}}>
+                                                <Text style={{color:"#D56A14"}}>Change Language</Text>
+                                            </View>
+
+                        <View style={{gap:10,alignItems:"center",justifyContent:"center",paddingVertical:SCREEN_HEIGHT*0.02}}> 
+                                            <View style={{flexDirection:"row",gap:5,alignItems:"center",justifyContent:"center"}}>
+                                                <View style={{borderWidth:2,height:SCREEN_HEIGHT*0.02,width:SCREEN_WIDTH*0.04,borderRadius:100}}></View>
+                                                <Text style={{color:"black",fontSize:12}}>Hindi</Text>
+                                            </View>
+
+                                            <View style={{flexDirection:"row",gap:5,alignItems:"center",justifyContent:"center"}}>
+                                                <View style={{borderWidth:2,height:SCREEN_HEIGHT*0.02,width:SCREEN_WIDTH*0.04,borderRadius:100}}></View>
+                                                <Text style={{color:"black",fontSize:12}}>English</Text>
+                                            </View>
+                     </View>                
+
+                     <TouchableOpacity onPress={closeModal} style={{ alignSelf: 'center', paddingTop: SCREEN_HEIGHT * 0.01 }}>
+                            <Text style={{ color: "#D56A14" }}>Close</Text>
+                        </TouchableOpacity>
+
+                                </View>
+
+
+                            </View>
+
+                </Modal>
+            )
+        }
+
+       
 }
 
 export default DrawerContent

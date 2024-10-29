@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View ,Image} from 'react-native'
 import React from 'react'
 import Myheader from './Components/Myheader'
-import { SCREEN_HEIGHT } from '../config/Style'
+import { SCREEN_HEIGHT ,SCREEN_WIDTH } from '../config/Style'
+
 
 const Following = () => {
   return (
@@ -14,8 +15,14 @@ const Following = () => {
   function NODATA(){
     return(
         <View>
-            <View style={{alignItems:"center",justifyContent:"center",paddingVertical:SCREEN_HEIGHT*0.4}}>
-                <Text style={{color:"black",fontWeight:"400",fontSize:20}}>No Data Available </Text>
+            <View style={{alignItems:"center",justifyContent:"center",paddingVertical:SCREEN_HEIGHT*0.3}}>
+
+              <View>
+                <Image
+                style={{height:SCREEN_HEIGHT*0.2,width:SCREEN_WIDTH*0.4}}
+                source={require('../assets/images/emptybox.png')}/>
+              </View>
+                <Text style={{color:"black",fontWeight:"400",fontSize:15}}>No Data Available </Text>
             </View>
         </View>
     )
