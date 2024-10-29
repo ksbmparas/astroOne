@@ -35,6 +35,7 @@ import Chalisa from '../Screens/ReligionCollection/Chalisa';
 import BeejMantra from '../Screens/ReligionCollection/BeejMantra';
 import Kavach from '../Screens/ReligionCollection/Kavachas';
 import BookPooja from '../Screens/ReligionCollection/BookPooja';
+import PoojaDetailScreen from '../Screens/ReligionCollection/PoojaDetailScreen';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
@@ -76,9 +77,7 @@ const StackNavigation = () => {
            
             <Stack.Screen name="DetailPujaScreens" component={DetailPujaScreens}/>
             <Stack.Screen name='BookPooja' component={BookPooja}/>
-
-
-
+            <Stack.Screen name="PoojaDetail" component={PoojaDetailScreen}/>
 
         </Stack.Navigator>
     

@@ -1,7 +1,7 @@
 import { FlatList, Image, ImageBackground, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { Colors, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../config/Style'
-import { useNavigation, } from '@react-navigation/native'
+import { Colors, SCREEN_HEIGHT } from '../../config/Style'
+import { useNavigation } from '@react-navigation/native'
 import { responsiveScreenFontSize, responsiveScreenHeight, responsiveScreenWidth } from 'react-native-responsive-dimensions'
 import Myheader from '../Components/Myheader'
 
@@ -18,7 +18,21 @@ const poojaImages = {
   Kavachas: require('../../assets/images/newkavch.png'),
   VratKathas: require('../../assets/images/newvartkatha.png'),
   PoojaVidhi: require('../../assets/images/newpoojavidhi.png'),
+};
 
+const poojaDetails = {
+  Satyanarayan_Pooja: { name: 'Satyanarayan Pooja', price: 'Rs 2100' },
+  Durga_Pooja: { name: 'Durga Pooja', price: 'Rs 2500' },
+  Laxmi_Pooja: { name: 'Laxmi Pooja', price: 'Rs 3000' },
+  Mahakali_Pooja: { name: 'Mahakali Pooja', price: 'Rs 2200' },
+  Shiv_Pooja: { name: 'Shiv Pooja', price: 'Rs 1800' },
+  Krishna_Pooja: { name: 'Krishna Pooja', price: 'Rs 2000' },
+  Aarti: { name: 'Aarti', price: 'Free' },
+  Chalisa: { name: 'Chalisa', price: 'Free' },
+  BeejMantra: { name: 'Beej Mantra', price: 'Free' },
+  Kavachas: { name: 'Kavachas', price: 'Free' },
+  VratKathas: { name: 'Vrat Kathas', price: 'Free' },
+  PoojaVidhi: { name: 'Pooja Vidhi', price: 'Free' },
 };
 
 const BookPooja = () => {
@@ -39,33 +53,35 @@ const BookPooja = () => {
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.touchable}
+              onPress={() =>
+                navigation.navigate('PoojaDetail', {
+                  image: poojaImages[item],
+                  name: poojaDetails[item].name,
+                  price: poojaDetails[item].price,
+                })
+              }
             >
-              <View style={{
-                width: responsiveScreenWidth(45),
-                height: responsiveScreenWidth(60),
-                alignItems: 'center',
-                backgroundColor: Colors.white,
-                borderRadius: 25,
-                elevation: 4
-              }}>
-                <Image
-                  source={poojaImages[item]}
-                  style={styles.touchableImage}
-                />
+              <View style={styles.imageContainer}>
+                <Image source={poojaImages[item]} style={styles.touchableImage} />
               </View>
-              <Text style={styles.touchableText}>{item}</Text>
+              <View style={styles.textContainer}>
+                <Text style={styles.touchableText}>{item}</Text>
+                <Text style={styles.touchableText1}>{poojaDetails[item].name}</Text>
+                <Text style={styles.priceText}>{poojaDetails[item].price}</Text>
+              </View>
+              <View style={styles.buttonContainer}>
+                <Text style={styles.bookText}>Book</Text>
+              </View>
             </TouchableOpacity>
           )}
           contentContainerStyle={styles.flatListContainer}
         />
       </ImageBackground>
-    </SafeAreaView >
-  )
+    </SafeAreaView>
+  );
 }
 
 export default BookPooja
-
-
 
 const styles = StyleSheet.create({
   backgroundImage: {
@@ -76,14 +92,14 @@ const styles = StyleSheet.create({
   headerContainer: {
     padding: 12,
     flexDirection: 'row',
-    backgroundColor: Colors.white
+    backgroundColor: Colors.white,
   },
   backIcon: {
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 1,
     marginTop: responsiveScreenHeight(0.2),
-    marginLeft: responsiveScreenWidth(1)
+    marginLeft: responsiveScreenWidth(1),
   },
   txt: {
     alignSelf: 'center',
@@ -95,22 +111,61 @@ const styles = StyleSheet.create({
   touchable: {
     flex: 1,
     alignItems: 'center',
+    height:responsiveScreenHeight(30)
+  },
+  imageContainer: {
+    width: responsiveScreenWidth(45),
+    height: responsiveScreenWidth(60),
+    alignItems: 'center',
+    backgroundColor: Colors.white,
+    borderRadius: 15,
+    elevation: 4,
   },
   touchableImage: {
     width: responsiveScreenWidth(44),
     height: responsiveScreenWidth(40),
     borderColor: Colors.black,
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
     elevation: 4,
+  },
+  textContainer: {
+    width: responsiveScreenWidth(44),
+    alignItems: 'flex-start',
+    paddingLeft: responsiveScreenWidth(2),
+    bottom: responsiveScreenHeight(9),
   },
   touchableText: {
     fontSize: responsiveScreenFontSize(1.4),
     color: Colors.black,
     fontWeight: 'bold',
-    bottom: responsiveScreenHeight(9),
+  },
+  touchableText1: {
+    fontSize: responsiveScreenFontSize(1.2),
+    color: Colors.black,
+    fontWeight: 'semibold',
+  },
+  priceText: {
+    fontSize: responsiveScreenFontSize(1.1),
+    color: Colors.black,
+    fontWeight: 'bold',
+  },
+  buttonContainer:{
+    width: responsiveScreenWidth(44),
+    bottom: responsiveScreenHeight(9.3),
+    alignItems:'flex-end',
+    marginRight:responsiveScreenWidth(4),
+  },
+  bookText: {
+    borderColor: Colors.green,
+    color:Colors.green,
+    borderWidth: 1,
+    borderRadius:8,
+    paddingVertical:responsiveScreenWidth(2),
+    paddingHorizontal:responsiveScreenWidth(7),
+    fontSize:responsiveScreenFontSize(1.4),
   },
   flatListContainer: {
-    paddingTop: responsiveScreenHeight(2)
-  }
-})
+    paddingTop: responsiveScreenHeight(2),
+  },
+});
