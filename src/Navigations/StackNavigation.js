@@ -39,6 +39,7 @@ import HowtoUse from '../Screens/HowtoUse';
 import EorderHistory from '../Screens/EorderHistory/EorderHistory';
 import EordertopTabs from './EordertopTabs';
 import About from '../Screens/About';
+import PoojaDetailScreen from '../Screens/ReligionCollection/PoojaDetailScreen';
 const Stack = createStackNavigator();
 const StackNavigation = () => {
 
@@ -86,6 +87,7 @@ const StackNavigation = () => {
             <Stack.Screen name='About' component={About}/>
          
 
+            <Stack.Screen name="PoojaDetail" component={PoojaDetailScreen}/>
 
         </Stack.Navigator>
     
