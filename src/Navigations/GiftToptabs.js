@@ -8,7 +8,7 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../config/Style';
 
 
 const Tab=createMaterialTopTabNavigator();
-const GiftToptabs = () => {
+const GiftToptabs = () => {     
   return (
     <View style={{flex:1}}>
         <Myheader title={'Gifts'}/>

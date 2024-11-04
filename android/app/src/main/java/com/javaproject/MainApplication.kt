@@ -1,4 +1,4 @@
-package com.javaproject
+package com.ksbm.astroone
 
 import android.app.Application
 import com.facebook.react.PackageList

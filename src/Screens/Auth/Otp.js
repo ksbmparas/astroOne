@@ -12,7 +12,7 @@ const Otp = () => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
-            <Image source={require('../../images/design.png')} resizeMode='cover' style={{ width: '100%' }} />
+            <Image source={require('../../images/design.png')} resizeMode='cover' style={{ width: '100%'}} />
             <FlatList
                 ListHeaderComponent={
                     <View style={{ marginTop: SCREEN_HEIGHT * 0.05, gap: 20 }}>
@@ -30,7 +30,7 @@ const Otp = () => {
 
     function VerifyButton() {
         return (
-            <TouchableOpacity style={{ width: '100%', paddingVertical: 18, backgroundColor: 'orange', borderRadius: 10, alignItems: 'center', elevation: 4, }} onPress={() => { navigation.navigate('Home1') }}>
+            <TouchableOpacity style={{ width: '100%', paddingVertical: 18, backgroundColor:Colors.background_theme1, borderRadius: 10, alignItems: 'center', elevation: 4, }} onPress={() => { navigation.navigate('Home1') }}>
                 <Text style={{ ...Fonts._14MontserratBoldWhite }}>Verify</Text>
             </TouchableOpacity>
         )

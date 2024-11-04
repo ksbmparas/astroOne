@@ -1,4 +1,4 @@
-package com.javaproject
+package com.ksbm.astroone
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
