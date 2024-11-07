@@ -1,4 +1,4 @@
-import * as actionTypes from '../actionTypes'
+import * as actionTypes from '../ActionTypes'
 
 export const onChatNow = payload => ({
     type: actionTypes.ON_CHAT_NOW,

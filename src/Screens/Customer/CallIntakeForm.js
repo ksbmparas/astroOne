@@ -44,7 +44,7 @@ import {
   import MyLoader from '../../components/MyLoader';
   import database from '@react-native-firebase/database';
   import {CommonActions} from '@react-navigation/native';
-  import * as UserActions from '../../redux/actions/CustomerActions';
+  import * as UserActions from '../../Redux/Actions/CustomerActions';
   import { warnign_toast } from '../../components/MyToastMessage';
   const {width, height} = Dimensions.get('screen');
   import { useTranslation } from 'react-i18next';

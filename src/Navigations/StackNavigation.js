@@ -45,7 +45,7 @@ const StackNavigation = () => {
 
     return (
     
-        <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }} initialRouteName='Splash'>
+        <Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right' }} initialRouteName='Home1'>
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Otp" component={Otp} />
             <Stack.Screen name="Home1" component={bottomtabnavigator} />

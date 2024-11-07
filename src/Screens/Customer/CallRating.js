@@ -21,7 +21,7 @@ import {
   import {warnign_toast} from '../../components/MyToastMessage';
   import {connect} from 'react-redux';
   import {CommonActions} from '@react-navigation/native';
-  import * as CustomerActions from '../../redux/actions/CustomerActions';
+  import * as CustomerActions from '../../redux/Actions/CustomerActions';
   import MyLoader from '../../components/MyLoader';
   
   const {width, height} = Dimensions.get('screen');

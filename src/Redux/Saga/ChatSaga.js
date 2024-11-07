@@ -1,5 +1,5 @@
 import { call, delay, put, select, take, takeLatest, takeLeading } from 'redux-saga/effects';
-import * as actionTypes from '../actionTypes';
+import * as actionTypes from './actionTypes';
 import { ApiRequest } from '../../config/api_requests';
 import {
     add_profile,
@@ -12,15 +12,15 @@ import {
     get_linked_profile,
     initiate_chat,
     store_file,
-} from '../../config/constants';
-import { get_unique_id, showToastMessage } from '../../utils/services';
-import { navigate, resetToScreen } from '../../navigations/NavigationServices';
-import { blobRequest, postRequest } from '../../utils/apiRequests';
-import socketServices from '../../utils/socket';
+} from '../../config/Constants'
+import { get_unique_id, showToastMessage } from '../../Utils/services'
+import { navigate, resetToScreen } from '../../NavigationService'
+import { blobRequest, postRequest } from '../../Utils/apiRequests'
+import socketServices from '../../Utils/Socket'
 import database from '@react-native-firebase/database'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { GiftedChat } from 'react-native-gifted-chat';
-import * as ChatActions from '../actions/ChatActions'
+import * as ChatActions from '../../Redux/Actions/ChatActions'
 import RNFetchBlob from 'rn-fetch-blob';
 import axios from 'axios';
 

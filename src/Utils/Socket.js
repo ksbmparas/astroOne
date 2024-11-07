@@ -1,8 +1,8 @@
 import { io } from 'socket.io-client';
-import { base_url } from '../config/constants';
-import { resetToScreen } from '../navigations/NavigationServices';
+import { base_url } from '../config/Constants'
+import { resetToScreen } from '../NavigationService'
 import { showToastMessage } from './services';
-import * as ChatActions from '../redux/actions/ChatActions'
+import * as ChatActions from '../Redux/Actions/ChatActions'
 // const SOCKET_URL = 'http://localhost:4000/';
 const SOCKET_URL = base_url;
 

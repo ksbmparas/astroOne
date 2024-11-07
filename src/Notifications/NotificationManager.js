@@ -7,11 +7,11 @@ import notifee, {
   import { Linking } from 'react-native';
   import { base_url } from '../config/Constants';
   // import * as NotificationActions from '../redux/actions/NotificationActions'
-  import { resetToScreen } from '../navigations/NavigationServices';
-  import * as ChatActions from '../redux/actions/ChatActions'
-  import { showToastMessage } from '../utils/services';
-  import * as CustomerActions from '../redux/actions/CustomerActions'
-  import * as LiveActions from '../redux/actions/LiveActions'
+  import { resetToScreen } from '../Navigations/NavigationServices';
+  import * as ChatActions from '../Redux/Actions/CustomerActions';
+  import { showToastMessage } from '../Utils/services'
+  import * as CustomerActions from '../Redux/Actions/CustomerActions';
+  import * as LiveActions from '../Redux/Actions/LiveActions'
   
   export const NotificationInitialize = async () => {
     await notifee.requestPermission();

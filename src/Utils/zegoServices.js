@@ -11,7 +11,7 @@ import ZegoUIKitPrebuiltCallService, {
   import * as ZIM from 'zego-zim-react-native';
   import * as ZPNs from 'zego-zpns-react-native';
   import { Alert } from 'react-native';
-  import * as ChatActions from '../redux/actions/ChatActions';
+  import * as ChatActions from '../Redux/Actions/ChatActions'
   import { navigate } from '../navigations/NavigationServices';
   
   

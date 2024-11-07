@@ -1,9 +1,9 @@
 
 // base url
 
-export const base_url = " https://astrooneapi.ksdelhi.net/";
-export const img_url = " https://astrooneapi.ksdelhi.net/uploads/";
-export const api_url = " https://astrooneapi.ksdelhi.net/api/";
+export const base_url = "https://astrooneapi.ksdelhi.net/";
+export const img_url = "https://astrooneapi.ksdelhi.net/uploads/";
+export const api_url = "https://astrooneapi.ksdelhi.net/api/";
 
 
 
